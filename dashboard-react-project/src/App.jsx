@@ -1,12 +1,15 @@
-import "./App.css";
 import Nav from "./components/Nav";
 import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <div className="flex">
-      <Nav />
-      <Dashboard />
+      <div>
+        <Nav />
+      </div>
+      <div className="w-full">
+        <Dashboard />
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavLink from "./NavLink";
+import NavLink from "./Navbar/NavLink";
 import customers from "../assets/icon/users.png";
 import dashboard from "../assets/icon/home.png";
 import signOut from "../assets/icon/logout.png";

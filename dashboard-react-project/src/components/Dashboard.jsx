@@ -1,6 +1,6 @@
 import Stats from "./Stats/Stats";
-import TaskTable from "./TaskTable/TaskTable";
-import UserTable from "./UserTable/UserTable";
+import TaskTable from "./TaskTable";
+import UserTable from "./UserTable";
 import comments from "../assets/icon/comments.png";
 import daily_views from "../assets/icon/daily_views.png";
 import earning from "../assets/icon/earning.png";
@@ -151,7 +151,7 @@ const Dashboard = () => {
           <Stats key={stat.name} stat={stat} />
         ))}
       </div>
-      <div className="flex border-solid border-2 border-green-700">
+      <div className="flex border-solid border-2 border-green-700 p-10 justify-evenly">
         <div className="border-solid border-2 border-red-700">
           {tasks.map((task) => (
             <TaskTable key={task.title} task={task} />

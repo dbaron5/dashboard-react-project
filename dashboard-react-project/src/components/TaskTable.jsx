@@ -6,7 +6,7 @@ const TaskTable = ({ task }) => {
         <div>{task.title}</div>
         <div>{task.state}</div>
         <div>{task.description}</div>
-        <div>{task.assignee}</div>
+        {/* <div>{task.assignee}</div> */}
       </div>
     </>
   );

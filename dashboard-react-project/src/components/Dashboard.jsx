@@ -139,7 +139,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex items-center justify-between px-4 py-2">
+      <div className="flex items-center justify-between px-4 py-2 pb-10">
         <div className="flex items-center pl-96">
           <input
             type="text"
@@ -156,16 +156,19 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className="flex justify-center space-x-7 pl-5 pr-5 pt-2">
+      <div className="flex justify-center space-x-7 pl-5 pr-5 pt-2 pb-10">
         {stats.map((stat) => (
           <Stats key={stat.name} stat={stat} />
         ))}
       </div>
-      <div className="p-10 h-4/5 justify-evenly flex">
+      <div className="p-10 h-4/5 justify-evenly flex pr-7">
         <div>
           <TaskTable key={tasks.title} tasks={tasks} />
         </div>
-        <div>
+        <div className="flex-col pt-5 text-center h-4/5 shadow-xl rounded-lg">
+          <div className="font-bold text-xl pb-10">
+            <h1>Users</h1>
+          </div>
           {users.map((user) => (
             <UserTable key={user.title} user={user} />
           ))}

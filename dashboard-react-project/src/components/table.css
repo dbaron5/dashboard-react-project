@@ -1,0 +1,31 @@
+td[id="State-Completed"]:nth-child(3) span {
+  background-color: #8de12f !important;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+td[id="State-In Progress"]:nth-child(3) span {
+  background-color: #1994cd !important;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+td[id="State-Pending"]:nth-child(3) span {
+  background-color: #f7c83e !important;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+td[id="State-Scheduled"]:nth-child(3) span {
+  background-color: rgb(232, 131, 255) !important;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.header {
+  color: red;
+}

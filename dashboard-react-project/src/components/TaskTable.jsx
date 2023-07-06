@@ -5,6 +5,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import { useMemo } from "react";
+import "./table.css";
 
 const TaskTable = ({ tasks }) => {
   const data = useMemo(() => tasks, [tasks]);
@@ -40,7 +41,7 @@ const TaskTable = ({ tasks }) => {
           View All
         </button>
       </div>
-      <table className="table-auto w-full">
+      <table className="table-auto">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -55,16 +56,18 @@ const TaskTable = ({ tasks }) => {
             </tr>
           ))}
         </thead>
-        <tbody className="text-center border-t border-b">
-          {table.getRowModel().rows.map((row, index) => (
-            <tr
-              key={row.id}
-              className={index !== 0 ? "border-t" : ""}
-              style={{ height: "40px" }}
-            >
+        <tbody className="divide-y divide-gray-200">
+          {table.getRowModel().rows.map((row) => (
+            <tr key={row.id}>
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                <td
+                  key={cell.id}
+                  id={`State-${row.original.state}`}
+                  className="px-3 py-2 whitespace-nowrap text-sm text-gray-500"
+                >
+                  <span>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </span>
                 </td>
               ))}
             </tr>

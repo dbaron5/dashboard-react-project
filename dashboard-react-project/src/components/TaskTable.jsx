@@ -33,7 +33,13 @@ const TaskTable = ({ tasks }) => {
   });
 
   return (
-    <div className="task-table">
+    <div className="shadow-xl rounded-lg">
+      <div className="flex justify-between items-center mb-5 pr-2 pt-2">
+        <h1 className="text-2xl font-bold text-lilac pl-2 pt-2">Tasks List</h1>
+        <button className="px-3 py-2 text-white bg-blue-500 rounded">
+          View All
+        </button>
+      </div>
       <table className="table-auto w-full">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -49,9 +55,13 @@ const TaskTable = ({ tasks }) => {
             </tr>
           ))}
         </thead>
-        <tbody className="text-center">
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+        <tbody className="text-center border-t border-b">
+          {table.getRowModel().rows.map((row, index) => (
+            <tr
+              key={row.id}
+              className={index !== 0 ? "border-t" : ""}
+              style={{ height: "40px" }}
+            >
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

@@ -1,17 +1,18 @@
-import Stats from "./Stats/Stats";
+import Stats from "./Stats";
 import TaskTable from "./TaskTable";
 import UserTable from "./UserTable";
 import comments from "../assets/icon/comments.png";
 import daily_views from "../assets/icon/daily_views.png";
 import earning from "../assets/icon/earning.png";
 import sales from "../assets/icon/sales.png";
+import image0copy from "../assets/icon/image0copy.png";
 
 const Dashboard = () => {
   const stats = [
-    { name: "Daily Views", icon: daily_views, StatValue: 1504 },
-    { name: "Sales", icon: sales, StatValue: 80 },
-    { name: "Comments", icon: comments, StatValue: 284 },
-    { name: "Earning", icon: earning, StatValue: 7842 },
+    { name: "Daily Views", icon: daily_views, StatValue: "1,504" },
+    { name: "Sales", icon: sales, StatValue: "80" },
+    { name: "Comments", icon: comments, StatValue: "284" },
+    { name: "Earning", icon: earning, StatValue: "7,842" },
   ];
 
   const users = [
@@ -138,26 +139,33 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex justify-center">
-        <div>
-          <input type="text" placeholder="Search..." /> {/* Search bar */}
+      <div className="flex items-center justify-between px-4 py-2">
+        <div className="flex items-center pl-96">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border-gray-400 border rounded-3xl px-3 py-1 text-gray-500 leading-tight"
+            style={{ width: "200px" }}
+          />
         </div>
         <div>
-          <img src="avi.jpg" alt="Avatar" /> {/* Image */}
+          <img
+            src={image0copy}
+            alt="Avatar"
+            className="h-8 w-8 rounded-full object-cover"
+          />
         </div>
       </div>
-      <div className="flex justify-center space-x-7 pl-5 pr-5 pt-5">
+      <div className="flex justify-center space-x-7 pl-5 pr-5 pt-2">
         {stats.map((stat) => (
           <Stats key={stat.name} stat={stat} />
         ))}
       </div>
-      <div className="flex border-solid border-2 border-green-700 p-10 justify-evenly">
-        <div className="border-solid border-2 border-red-700">
-          {tasks.map((task) => (
-            <TaskTable key={task.title} task={task} />
-          ))}
+      <div className="p-10 h-4/5 justify-evenly flex">
+        <div>
+          <TaskTable key={tasks.title} tasks={tasks} />
         </div>
-        <div className="border-solid border-2 border-blue-700">
+        <div>
           {users.map((user) => (
             <UserTable key={user.title} user={user} />
           ))}

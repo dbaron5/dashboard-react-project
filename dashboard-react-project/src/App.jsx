@@ -3,7 +3,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div className="flex">
+    <div className="flex h-100vh">
       <div>
         <Nav />
       </div>

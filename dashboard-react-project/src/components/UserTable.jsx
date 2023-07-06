@@ -2,9 +2,10 @@
 const UserTable = ({ user }) => {
   return (
     <>
-      <div>
-        <div>{user.name}</div>
-        <div>{user.title}</div>
+      <div className="pl-20 pb-5">
+        <h1>Users</h1>
+        <div className="font-semibold">{user.name}</div>
+        <div className="text-gray-400">{user.title}</div>
       </div>
     </>
   );

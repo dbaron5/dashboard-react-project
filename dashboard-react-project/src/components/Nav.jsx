@@ -17,7 +17,7 @@ const Nav = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-  const menuWidth = isMenuOpen ? "w-80" : "w-30";
+  const menuWidth = isMenuOpen ? "w-80" : "w-16";
 
   const menuIconClass = isMenuOpen
     ? "duration-300 ease-in-out h-10 w-10"
@@ -39,7 +39,7 @@ const Nav = () => {
         {isMenuOpen && (
           <>
             <img className="h-10 w-10" src={reactNative} alt="" />
-            <h1 className="text-black text-2xl font-bold pr-10">
+            <h1 className="text-white text-2xl font-bold pr-10">
               React Native
             </h1>
           </>
@@ -47,7 +47,7 @@ const Nav = () => {
 
         <img className={menuIconClass} src={menu} alt="" onClick={toggleMenu} />
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 text-white">
         {links.map((link) => (
           <NavLink key={link.name} isMenuOpen={isMenuOpen} link={link} />
         ))}

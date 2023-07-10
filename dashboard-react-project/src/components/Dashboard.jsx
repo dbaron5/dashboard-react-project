@@ -7,6 +7,7 @@ import image0copy from "../assets/icon/image0copy.png";
 const Dashboard = ({ stats, users, tasks }) => {
   return (
     <>
+      <button className="bg-gray-800 rounded text-white transition">Add Tasks</button>
       <div className="flex items-center justify-between px-4 py-2 pb-10">
         <div className="flex items-center pl-96">
           <input
